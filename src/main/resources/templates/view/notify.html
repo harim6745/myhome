@@ -1,0 +1,23 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="layout/common_layout" th:with="activeTab='signup', title='Sign up'">
+<div layout:fragment="content">
+    <div class="py-5 text-center">
+        <div th:if="${result_code == 'password.reset.send'}">
+            <p class="lead">My Book Store 패스워드 재설정</p>
+            <h2>
+                [<span th:text="${email}"></span>]로 링크를 전송하였습니다.
+            </h2>
+        </div>
+
+        <div th:if="${result_code == 'password.reset.complete'}">
+            <p class="lead">My Book Store 패스워드 재설정</p>
+            <h2>패스워드 재설정이 완료되었습니다.</h2>
+        </div>
+
+    </div>
+</div>
+</html>

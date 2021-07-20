@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="layout/common_layout">
+
+<!--&lt;!&ndash; index.html 고유 CSS 추가 &ndash;&gt;-->
+<!--<th:block layout:fragment="css">-->
+<!--    <link rel="stylesheet" th:href="@{/css/page/index.css}" >-->
+<!--</th:block>-->
+
+<!--&lt;!&ndash; index.html 고유 스크립트 추가 &ndash;&gt;-->
+<!--<th:block layout:fragment="script">-->
+<!--    <script th:src="@{/js/page/index.js}"></script>-->
+<!--</th:block>-->
+
+<div layout:fragment="content">
+    <div class = "py-5 ml-2">
+        <h2>이달의 추천 도서</h2>
+        <p class="lead">현재 핫한 도서 리스트!</p>
+    </div>
+    <th:block th:replace="fragment/item_list :: ItemListFragment(${bookList})"/>
+
+    <hr class = "col-12 my-4"/>
+
+    <div class = "py-5 ml-2">
+        <h2>이달의 추천 앨범</h2>
+        <p class="lead">현재 핫한 음반 리스트!</p>
+    </div>
+    <th:block th:replace="fragment/item_list :: ItemListFragment(${albumList})"/>
+</div>
+
+</html>
